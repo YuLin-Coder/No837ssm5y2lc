@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShengfenDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShengfenEntity" id="shengfenMap">
+        <result property="shengfen" column="shengfen"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShengfenVO" >
+		SELECT * FROM shengfen  shengfen         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShengfenVO" >
+		SELECT  shengfen.* FROM shengfen  shengfen
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShengfenView" >
+
+		SELECT  shengfen.* FROM shengfen  shengfen 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShengfenView" >
+		SELECT * FROM shengfen  shengfen <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
